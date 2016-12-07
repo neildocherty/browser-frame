@@ -1,0 +1,180 @@
+@import 'mixins';
+
+.browser {
+    position: relative;
+    width: 40vw;
+    height: 40vh;
+    min-width: 200px;
+    margin: 16px auto;
+    overflow: hidden;
+
+    @include transition( all 0.2s ease-in);
+    @include border-radius(4px);
+    @include box-shadow(0px, 4px, 20px, 0px, #7E7E7E)
+
+    &.minified {
+        height: 71px;
+        overflow: hidden;
+    }
+
+    &.maxified {
+        width: 80vw;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+
+  .bar {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: rgba(248,248,248,0.95);
+    border-bottom: 1px solid rgb(201,201,201);
+
+    .dots {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+
+      span {
+        display: inline-block;
+        margin-right: 6px;
+        width: 8px;
+        height: 8px;
+        @include border-radius(8px);
+        background-color: rgb(228,228,228);
+        border: 1px solid rgb(201,201,201);
+        @include transition( all 0.2s ease);
+
+      }
+
+    }
+
+    .tab {
+      position: absolute;
+      left: 70px;
+      top: 2px;
+      height: 30px;
+      background-color: rgb(248,248,248);
+      width: 120px;
+
+      border: 1px solid rgb(211,211,211);
+      border-bottom: none;
+      border-radius: 4px 4px 0px 0px;
+      @include transform( perspective(70px) rotateX(30deg))
+    }
+    .tabbar {
+      position: relative;
+      background-color: rgb(248,248,248);
+      width: 100%;
+      height: 100%;
+      top: 31px;
+      border-top: 1px solid rgb(211,211,211);
+      border-bottom: none;
+      display: inline-flex;
+      flex-direction: row;
+
+      .navitems {
+        width: 100px;
+        height: 26px;
+        margin-top: 8px;
+        text-align: center;
+        @include font-size(14px);
+        line-height: 26px;
+        color: rgb(211,211,211);
+         & i:nth-child(-n+2) {
+           margin-right: 8px;
+         }
+      }
+
+      .menu {
+        @extend .navitems;
+        width: 40px;
+      }
+
+      .address {
+        height: 26px;
+        width: 100%;
+        margin: 6px 0px;
+        background-color: rgb(255,255,255);
+        border: 1px solid rgb(211,211,211);
+        @include border-radius(4px);
+
+        line-height: 26px;
+        font-family: helvetica;
+        @include font-size(12px);
+        padding-left: 8px;
+        color: #363636;
+        overflow: scroll;
+        text-overflow: ellipsis;
+      }
+
+
+    }
+
+    .newtab {
+      position: absolute;
+      left: 200px;
+      top: 8px;
+      height: 16px;
+      width: 32px;
+      background-color: rgb(248,248,248);
+      border: 1px solid rgb(228,228,228);
+      @include border-radius(4px);
+      @include transform( skewX(20deg) )
+
+      &:hover {
+        background-color: rgb(238,238,238);
+      }
+    }
+
+  }
+
+
+  .window {
+    position: relative;
+    top: 71px;
+    background-color: #fff;
+    height: -moz-calc(100% - (73px));
+    height: -webkit-calc(100% - (73px));
+    height: calc(100% - (73px));
+    // background-image: url('../img/img_01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    @include box-shadow(0px, 8px, 30px, 0px, #7E7E7E )
+    @include transform( translateY(-4px) )
+    @include transition( all 0.4s ease-out);
+
+    .bar {
+        background-color: rgba(244,244,244,1);
+
+      .dots {
+          span.del{
+            background-color: rgb(250,95,86);
+            border: 1px solid rgb(225,69,64);
+          }
+          span.min{
+            background-color: rgb(253,191,48);
+            border: 1px solid rgb(255,161,39);
+          }
+          span.max{
+            background-color: rgb(56,204,64);
+            border: 1px solid rgb(52,174,50);
+          }
+      }
+    }
+
+  }
+
+}

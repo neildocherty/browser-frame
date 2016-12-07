@@ -1,0 +1,24 @@
+{
+  "name": "browser",
+  "version": "0.1.0",
+  "description": "simple browser frame for displaying images/video/etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neildocherty/browser-frame.git"
+  },
+  "author": "neil docherty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neildocherty/browser-frame/issues"
+  },
+  "homepage": "https://github.com/neildocherty/browser-frame#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-sass": "^2.3.2"
+  }
+}
